@@ -8,6 +8,10 @@ This is a Swagger2Markup Gradle template project which uses the swagger2markup-g
 
 Place you Swagger Specification (JSON or YAML) file into the folder `src/docs/swagger`.
 
+=== Add hand-written content
+
+Add hand-written AsciiDoc content into the folder `src/docs/asciidoc` and include the files in `src/docs/asciidoc/index.adoc`.
+
 === Convert AsciiDoc into HTML
 
 [source]
