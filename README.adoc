@@ -6,7 +6,7 @@ This is a Swagger2Markup Gradle template project which uses the swagger2markup-g
 
 === Swagger Specification
 
-Place you Swagger Specification (JSON or YAML) file into the folder `src/docs/swagger`.
+Copy your Swagger Specification (JSON or YAML) file into the folder `src/docs/swagger`.
 
 === Add hand-written content
 
