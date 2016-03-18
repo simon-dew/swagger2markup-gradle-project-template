@@ -4,6 +4,10 @@ This is a Swagger2Markup Gradle template project which uses the swagger2markup-g
 
 == Usage guide
 
+=== Swagger Specification
+
+Place you Swagger Specification (JSON or YAML) file into the folder `src/docs/swagger`.
+
 === Convert AsciiDoc into HTML
 
 [source]
