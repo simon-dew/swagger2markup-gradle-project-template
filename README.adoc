@@ -1,0 +1,27 @@
+= Swagger2Markup Gradle template project
+
+This is a Swagger2Markup Gradle template project which uses the swagger2markup-gradle-plugin to convert a contract-first Swagger specification into an AsciiDoctor-based HTML documentation.
+
+== Usage guide
+
+=== Convert AsciiDoc into HTML
+
+[source]
+----
+gradlew asciidoctor
+----
+
+See `build/asciidoc/html5/index.html` to check the generated HTML report.
+
+=== Watch AsciiDoc files
+
+[source]
+----
+gradlew watch
+----
+
+=== Start LiveReload
+[source]
+----
+gradlew liveReload
+----
