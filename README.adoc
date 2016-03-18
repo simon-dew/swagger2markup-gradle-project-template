@@ -13,11 +13,11 @@ Place you Swagger Specification (JSON or YAML) file into the folder `src/docs/sw
 Add hand-written AsciiDoc content into the folder `src/docs/asciidoc` and include the files in `src/docs/asciidoc/index.adoc`.
 
 ```
-include::{generated}/overview.adoc[]
-include::manual_content1.adoc[]
-include::manual_content2.adoc[]
-include::{generated}/paths.adoc[]
-include::{generated}/definitions.adoc[]
+\include::{generated}/overview.adoc[]
+\include::manual_content1.adoc[]
+\include::manual_content2.adoc[]
+\include::{generated}/paths.adoc[]
+\include::{generated}/definitions.adoc[]
 ```
 
 The Asciidoctor attribute `{generated}` is set by the Gradle script to `build/asciidoc`.
