@@ -640,6 +640,10 @@ definitions:
         format: int64
       name:
         type: string
+        description: "Sample string with range 0-2 and a pattern"
+        minLength: 0
+        maxLength: 2
+        pattern: "[A-Z0-9]{0,2}"
   Order:
     type: object
     properties:
