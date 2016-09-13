@@ -39,7 +39,7 @@ convertSwagger2markup {
     config = ['swagger2markup.markupLanguage' : 'ASCIIDOC',
               'swagger2markup.pathsGroupedBy' : 'TAGS',
               'swagger2markup.extensions.dynamicDefinitions.contentPath' : file('src/docs/asciidoc/extensions/definitions').absolutePath,
-              'swagger2markup.extensions.dynamicOverview.contentPath' : file('src/docs/extensions/overview').absolutePath,
+              'swagger2markup.extensions.dynamicOverview.contentPath' : file('src/docs/asciidoc/extensions/overview').absolutePath,
               'swagger2markup.extensions.dynamicPaths.contentPath' : file('src/docs/asciidoc/extensions/paths').absolutePath,
               'swagger2markup.extensions.dynamicSecurity.contentPath' : file('src/docs/asciidoc/extensions/security').absolutePath]
 }
