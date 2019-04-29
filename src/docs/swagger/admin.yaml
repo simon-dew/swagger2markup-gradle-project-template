@@ -881,8 +881,7 @@ definitions:
         type: boolean
         default: false
         description: |
-          Specifies whether the query engine should create a prepared statement every time a N1QL request is submitted, whether the PREPARE statement is included or not.
-          Refer to xref:n1ql-language-reference/prepare.adoc#auto-prepare[Auto-Prepare] for more information.
+          Refer to xref:n1ql:n1ql-language-reference/prepare.adoc#auto-prepare[Auto-Prepare] for more information.
       completed:
         type: object
         title: Completed requests logging parameters
@@ -975,8 +974,7 @@ definitions:
         type: integer
         default: 1
         description: |
-          Maximum number of index partitions, for computing aggregation in parallel.
-          Refer to xref:n1ql-language-reference/index-partitioning.adoc#max_parallelism[Max Parallelism] for more information.
+          Refer to xref:n1ql:n1ql-language-reference/index-partitioning.adoc#max_parallelism[Max Parallelism] for more information.
       memprofile:
         type: string
         default: ""
