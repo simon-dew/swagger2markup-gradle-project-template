@@ -1,3 +1,5 @@
+:page-partial:
+
 :name: \{name}
 :cluster: \{cluster}
 :node: \{node}
