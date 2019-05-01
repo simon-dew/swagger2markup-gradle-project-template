@@ -565,7 +565,41 @@ definitions:
         type: string
         description: The text of the N1QL query.
       uses:
-        type: number
+        description: The count of times the prepared statement has been executed.
+      avgElapsedTime:
+        type: string
+        format: duration
+        description: |
+          The mean time taken from when the request to execute the prepared statement was acknowledged by the service, to when the request was completed.
+          It includes the time taken by the service to schedule the request.
+      avgServiceTime:
+        type: string
+        format: duration
+        description: The mean amount of calendar time taken to complete the execution of the prepared statement.
+      lastUse:
+        type: string
+        format: date-time
+        description: Date and time of last use.
+      maxElapsedTime:
+        type: string
+        format: duration
+        description: |
+          The maximum time taken from when the request to execute the prepared statement was acknowledged by the service, to when the request was completed.
+          It includes the time taken by the service to schedule the request.
+      maxServiceTime:
+        type: string
+        format: duration
+        description: The maximum amount of calendar time taken to complete the execution of the prepared statement.
+      minElapsedTime:
+        type: string
+        format: duration
+        description: |
+          The minimum time taken from when the request to execute the prepared statement was acknowledged by the service, to when the request was completed.
+          It includes the time taken by the service to schedule the request.
+      minServiceTime:
+        type: string
+        format: duration
+        description: The minimum amount of calendar time taken to complete the execution of the prepared statement.
 
   Vitals:
     type: object
