@@ -495,11 +495,12 @@ definitions:
           Refer to xref:settings:query-settings.adoc#client_context_id[client_context_id] for more details.
       elapsedTime:
         type: string
+        format: duration
         description: |
           The time taken from when the request was acknowledged by the service to when the request was completed.
           It includes the time taken by the service to schedule the request.
       errorCount:
-        type: number
+        type: integer
         description: Total number of errors encountered while executing the query.
       phaseCounts:
         type: object
@@ -516,21 +517,24 @@ definitions:
         description: IP address and port number of the client application, from where the query is received.
       requestId:
         type: string
+        format: uuid
         description: Unique request ID internally generated for the query.
       requestTime:
         type: string
+        format: date-time
         description: Timestamp when the query is received.
       resultCount:
-        type: number
+        type: integer
         description: Total number of documents returned in the query result.
       resultSize:
-        type: number
+        type: integer
         description: Total number of bytes returned in the query result.
       scanConsistency:
         type: string
         description: The value of the query setting Scan Consistency used for the query.
       serviceTime:
         type: string
+        format: duration
         description: Total amount of calendar time taken to complete the query.
       state:
         type: string
@@ -553,9 +557,9 @@ definitions:
         type: string
         description: The full prepared statement in encoded format.
       featureControls:
-        type: number
+        type: integer
       indexApiVersion:
-        type: number
+        type: integer
       name:
         type: string
         description: |
@@ -565,6 +569,7 @@ definitions:
         type: string
         description: The text of the N1QL query.
       uses:
+        type: integer
         description: The count of times the prepared statement has been executed.
       avgElapsedTime:
         type: string
@@ -607,48 +612,51 @@ definitions:
     properties:
       uptime:
         type: string
+        format: duration
         description: The uptime of the query engine.
       local.time:
         type: string
+        format: date-time
         description: The local time of the query engine.
       version:
         type: string
         description: The version of the query engine.
       total.threads:
-        type: number
+        type: integer
         description: Active threads.
       cores:
-        type: number
+        type: integer
         description: Number of logical cores.
       gc.num:
-        type: number
+        type: integer
         description: Garbage collection.
       gc.pause.time:
         type: string
+        format: duration
         description: Garbage collection.
       gc.pause.percent:
-        type: number
+        type: integer
         description: Garbage collection.
       memory.usage:
-        type: number
+        type: integer
         description: Memory usage.
       memory.total:
-        type: number
+        type: integer
         description: Memory usage.
       memory.system:
-        type: number
+        type: integer
         description: Memory usage.
       cpu.user.percent:
-        type: number
+        type: integer
         description: CPU usage.
       cpu.sys.percent:
-        type: number
+        type: integer
         description: CPU usage.
       request.completed.count:
-        type: number
+        type: integer
         description: Total number of completed requests.
       request.active.count:
-        type: number
+        type: integer
         description: Total number of active requests.
       request.per.sec.1min:
         type: number
@@ -667,31 +675,36 @@ definitions:
           15-minute exponentially weighted moving average.
       request_time.mean:
         type: string
+        format: duration
         description: |
           End-to-end time to process a query.
           The mean value.
       request_time.median:
         type: string
+        format: duration
         description: |
           End-to-end time to process a query.
           The median value.
       request_time.80percentile:
         type: string
+        format: duration
         description: |
           End-to-end time to process a query.
           The 80th percentile.
       request_time.95percentile:
         type: string
+        format: duration
         description: |
           End-to-end time to process a query.
           The 95th percentile.
       request_time.99percentile:
         type: string
+        format: duration
         description: |
           End-to-end time to process a query.
           The 99th percentile.
       request.prepared.percent:
-        type: number
+        type: integer
         description: Percentage of requests that are prepared statements.
 
   Statistics:
@@ -699,58 +712,58 @@ definitions:
     title: Statistics
     properties:
       active_requests.count:
-        type: number
+        type: integer
         description: Total number of active requests.
       at_plus.count:
-        type: number
+        type: integer
         description: Total number of N1QL requests with `at_plus` index consistency.
       audit_actions.count:
-        type: number
+        type: integer
         description: |
           The total number of audit records sent to the server.
           Some requests cause more than one audit record to be emitted.
           Records in the output queue that have not yet been sent to the server are not counted.
       audit_actions_failed.count:
-        type: number
+        type: integer
         description: The total number of audit records sent to the server that failed.
       audit_requests_filtered.count:
-        type: number
+        type: integer
         description: The number of potentially auditable requests that cause no audit action to be taken.
       audit_requests_total.count:
-        type: number
+        type: integer
         description: The total number of potentially auditable requests sent to the query engine.
       cancelled.count:
-        type: number
+        type: integer
         description: Total number of cancelled requests.
       deletes.count:
-        type: number
+        type: integer
         description: Total number of DELETE operations.
       errors.count:
-        type: number
+        type: integer
         description: The total number of N1QL errors returned so far.
       index_scans.count:
-        type: number
+        type: integer
         description: Total number of secondary index scans.
       inserts.count:
-        type: number
+        type: integer
         description: Total number of INSERT operations.
       invalid_requests.count:
-        type: number
+        type: integer
         description: Total number of requests for unsupported endpoints.
       mutations.count:
-        type: number
+        type: integer
         description: Total number of document mutations.
       prepared.count:
-        type: number
+        type: integer
         description: Total number of prepared statements executed.
       primary_scans.count:
-        type: number
+        type: integer
         description: Total number of primary index scans.
       queued_requests.count:
-        type: number
+        type: integer
         description: Total number of queued requests.
       request_time.count:
-        type: number
+        type: integer
         description: Total end-to-end time to process all queries.
       request_timer.15m.rate:
         type: number
@@ -788,10 +801,10 @@ definitions:
           End-to-end time to process a query.
           The 99.9th percentile.
       request_timer.count:
-        type: number
+        type: integer
         description: Total number of N1QL requests.
       request_timer.max:
-        type: number
+        type: integer
         description: |
           End-to-end time to process a query.
           The maximum value.
@@ -811,7 +824,7 @@ definitions:
           End-to-end time to process a query.
           The median value.
       request_timer.min:
-        type: number
+        type: integer
         description: |
           End-to-end time to process a query.
           The minimum value.
@@ -821,43 +834,43 @@ definitions:
           End-to-end time to process a query.
           The standard deviation.
       requests.count:
-        type: number
+        type: integer
         description: Total number of N1QL requests.
       requests_1000ms.count:
-        type: number
+        type: integer
         description: Number of queries that take longer than 1000ms.
       requests_250ms.count:
-        type: number
+        type: integer
         description: Number of queries that take longer than 250ms.
       requests_5000ms.count:
-        type: number
+        type: integer
         description: Number of queries that take longer than 5000ms.
       requests_500ms.count:
-        type: number
+        type: integer
         description: Number of queries that take longer than 500ms.
       result_count.count:
-        type: number
+        type: integer
         description: Total number of results (documents) returned by the query engine.
       result_size.count:
-        type: number
+        type: integer
         description: Total size of data returned by the query engine.
       scan_plus.count:
-        type: number
+        type: integer
         description: Total number of N1QL requests with `request_plus` index consistency.
       selects.count:
-        type: number
+        type: integer
         description: Total number of SELECT requests.
       service_time.count:
-        type: number
+        type: integer
         description: Time to execute all queries.
       unbounded.count:
-        type: number
+        type: integer
         description: Total number of N1QL requests with `not_bounded` index consistency.
       updates.count:
-        type: number
+        type: integer
         description: Total number of UPDATE requests.
       warnings.count:
-        type: number
+        type: integer
         description: The total number of N1QL warnings returned so far.
 
   Metrics:
@@ -865,7 +878,7 @@ definitions:
     title: Metrics
     properties:
       count:
-        type: number
+        type: integer
         description: A single value that represents the current state.
       15m.rate:
         type: number
@@ -880,7 +893,7 @@ definitions:
         type: number
         description: Mean rate since the query service started.
       max:
-        type: number
+        type: integer
         description: The maximum value.
       mean:
         type: number
@@ -889,7 +902,7 @@ definitions:
         type: number
         description: The median value.
       min:
-        type: number
+        type: integer
         description: The minimum value.
       stddev:
         type: number
