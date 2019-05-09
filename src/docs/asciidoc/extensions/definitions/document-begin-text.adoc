@@ -1,3 +1,6 @@
+// Pass through HTML table styles for this page.
+// This overrides Swagger2Markup's table layout defaults.
+
 ifdef::basebackend-html[]
 ++++
 <style type="text/css">
@@ -25,5 +28,3 @@ ifdef::basebackend-html[]
 </style>
 ++++
 endif::[]
-
-// Pass through HTML table styles for this page
