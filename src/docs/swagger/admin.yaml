@@ -764,7 +764,7 @@ definitions:
         description: Total number of queued requests.
       request_time.count:
         type: integer
-        description: Total end-to-end time to process all queries.
+        description: Total end-to-end time to process all queries (ns).
       request_timer.15m.rate:
         type: number
         description: |
@@ -783,22 +783,22 @@ definitions:
       request_timer.75%:
         type: number
         description: |
-          End-to-end time to process a query.
+          End-to-end time to process a query (ns).
           The 75th percentile.
       request_timer.95%:
         type: number
         description: |
-          End-to-end time to process a query.
+          End-to-end time to process a query (ns).
           The 95th percentile.
       request_timer.99%:
         type: number
         description: |
-          End-to-end time to process a query.
+          End-to-end time to process a query (ns).
           The 99th percentile.
       request_timer.99.9%:
         type: number
         description: |
-          End-to-end time to process a query.
+          End-to-end time to process a query (ns).
           The 99.9th percentile.
       request_timer.count:
         type: integer
@@ -806,12 +806,12 @@ definitions:
       request_timer.max:
         type: integer
         description: |
-          End-to-end time to process a query.
+          End-to-end time to process a query (ns).
           The maximum value.
       request_timer.mean:
         type: number
         description: |
-          End-to-end time to process a query.
+          End-to-end time to process a query (ns).
           The mean value.
       request_timer.mean.rate:
         type: number
@@ -821,17 +821,17 @@ definitions:
       request_timer.median:
         type: number
         description: |
-          End-to-end time to process a query.
+          End-to-end time to process a query (ns).
           The median value.
       request_timer.min:
         type: integer
         description: |
-          End-to-end time to process a query.
+          End-to-end time to process a query (ns).
           The minimum value.
       request_timer.stddev:
         type: number
         description: |
-          End-to-end time to process a query.
+          End-to-end time to process a query (ns).
           The standard deviation.
       requests.count:
         type: integer
@@ -853,7 +853,7 @@ definitions:
         description: Total number of results (documents) returned by the query engine.
       result_size.count:
         type: integer
-        description: Total size of data returned by the query engine.
+        description: Total size of data returned by the query engine (bytes).
       scan_plus.count:
         type: integer
         description: Total number of N1QL requests with `request_plus` index consistency.
@@ -862,7 +862,7 @@ definitions:
         description: Total number of SELECT requests.
       service_time.count:
         type: integer
-        description: Time to execute all queries.
+        description: Time to execute all queries (ns).
       unbounded.count:
         type: integer
         description: Total number of N1QL requests with `not_bounded` index consistency.
@@ -1220,6 +1220,7 @@ definitions:
           Refer to xref:manage:monitor/monitoring-n1ql-query.adoc#sys-completed-req[Configuring the Completed Requests] for more information and examples.
       request-size-cap:
         type: integer
+        format: int32
         default: 67108864
         example: 70000
         description: |
