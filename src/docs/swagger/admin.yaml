@@ -93,7 +93,7 @@ paths:
         Returns all prepared statements.
         [NOTE]
         ====
-        Refer to xref:manage:monitor/monitoring-n1ql-query.adoc#sys-prepared[Get Prepared Statements] for examples.
+        Refer to xref:manage:monitor/monitoring-n1ql-query.adoc#sys-prepared-get[Get Prepared Statements] for examples.
         ====
       security:
         - Default: []
@@ -114,7 +114,7 @@ paths:
         Returns the specified prepared statement.
         [NOTE]
         ====
-        Refer to xref:manage:monitor/monitoring-n1ql-query.adoc#sys-prepared[Get Prepared Statements] for examples.
+        Refer to xref:manage:monitor/monitoring-n1ql-query.adoc#sys-prepared-get[Get Prepared Statements] for examples.
         ====
       security:
         - Default: []
@@ -131,7 +131,7 @@ paths:
         Deletes the specified prepared statement.
         [NOTE]
         ====
-        Refer to xref:manage:monitor/monitoring-n1ql-query.adoc#sys-prepared[Delete Prepared Statement] for examples.
+        Refer to xref:manage:monitor/monitoring-n1ql-query.adoc#sys-prepared-delete[Delete Prepared Statements] for examples.
         ====
       security:
         - Default: []
@@ -151,7 +151,7 @@ paths:
         Returns all active query requests.
         [NOTE]
         ====
-        Refer to xref:manage:monitor/monitoring-n1ql-query.adoc#sys-active-req[Get Active Requests] for examples.
+        Refer to xref:manage:monitor/monitoring-n1ql-query.adoc#sys-active-get[Get Active Requests] for examples.
         ====
       security:
         - Default: []
@@ -172,7 +172,7 @@ paths:
         Returns the specified active query request.
         [NOTE]
         ====
-        Refer to xref:manage:monitor/monitoring-n1ql-query.adoc#sys-active-req[Get Active Requests] for examples.
+        Refer to xref:manage:monitor/monitoring-n1ql-query.adoc#sys-active-get[Get Active Requests] for examples.
         ====
       security:
         - Default: []
@@ -189,7 +189,7 @@ paths:
         Terminates the specified active query request.
         [NOTE]
         ====
-        Refer to xref:manage:monitor/monitoring-n1ql-query.adoc#sys-active-req[Terminate an Active Request] for examples.
+        Refer to xref:manage:monitor/monitoring-n1ql-query.adoc#sys-active-delete[Terminate an Active Request] for examples.
         ====
       security:
         - Default: []
@@ -209,7 +209,7 @@ paths:
         Returns all completed requests.
         [NOTE]
         ====
-        Refer to xref:manage:monitor/monitoring-n1ql-query.adoc#sys-completed-req[Get Completed Requests] for examples.
+        Refer to xref:manage:monitor/monitoring-n1ql-query.adoc#sys-completed-get[Get Completed Requests] for examples.
         ====
       security:
         - Default: []
@@ -230,7 +230,7 @@ paths:
         Returns the specified completed request.
         [NOTE]
         ====
-        Refer to xref:manage:monitor/monitoring-n1ql-query.adoc#sys-completed-req[Get Completed Requests] for examples.
+        Refer to xref:manage:monitor/monitoring-n1ql-query.adoc#sys-completed-get[Get Completed Requests] for examples.
         ====
       security:
         - Default: []
@@ -247,7 +247,7 @@ paths:
         Purges the specified completed request.
         [NOTE]
         ====
-        Refer to xref:manage:monitor/monitoring-n1ql-query.adoc#sys-completed-req[Purging the Completed Requests] for examples.
+        Refer to xref:manage:monitor/monitoring-n1ql-query.adoc#sys-completed-delete[Purge the Completed Requests] for examples.
         ====
       security:
         - Default: []
@@ -921,7 +921,7 @@ definitions:
         description: |
           Maximum number of completed requests.
           As new completed requests are added, old ones are removed.
-          Refer to xref:manage:monitor/monitoring-n1ql-query.adoc#sys-completed-req[Configuring the Completed Requests] for more information and examples.
+          Refer to xref:manage:monitor/monitoring-n1ql-query.adoc#sys-completed-config[Configure the Completed Requests] for more information and examples.
       completed-threshold:
         type: integer
         format: int32
@@ -930,7 +930,7 @@ definitions:
         description: |
           A duration in milliseconds.
           All completed queries lasting longer than this threshold are logged in the completed requests catalog.
-          Refer to xref:manage:monitor/monitoring-n1ql-query.adoc#sys-completed-req[Configuring the Completed Requests] for more information and examples.
+          Refer to xref:manage:monitor/monitoring-n1ql-query.adoc#sys-completed-config[Configure the Completed Requests] for more information and examples.
       controls:
         type: boolean
         default: false
@@ -1013,7 +1013,7 @@ definitions:
         enum: ["off","phases","timings"]
         description: |
           Specifies if there should be a profile section returned with the request results.
-          Refer to xref:manage:monitor/monitoring-n1ql-query.adoc#sys-completed-req[Configuring the Completed Requests] for more information and examples.
+          Refer to xref:manage:monitor/monitoring-n1ql-query.adoc#monitor-profile-details[Monitoring and Profiling Details] for more information and examples.
       request-size-cap:
         type: integer
         format: int32
