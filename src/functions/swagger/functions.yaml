@@ -31,7 +31,9 @@ paths:
         "200":
           description: An array of objects, each of which gives information about one library.
           schema:
-            $ref: "#/definitions/Collections"
+            type: array
+            items:
+              $ref: "#/definitions/Libraries"
     post:
       operationId: post_collection
       summary: Create or Update a Collection of Libraries
@@ -226,7 +228,9 @@ parameters:
     description: An array of objects, each of which gives information about one library.
     required: true
     schema:
-      $ref: "#/definitions/Collections"
+      type: array
+      items:
+        $ref: "#/definitions/Libraries"
 
   BodyLibrary:
     in: body
@@ -257,12 +261,6 @@ parameters:
       $ref: "#/definitions/Functions"
 
 definitions:
-  Collections:
-    type: array
-    title: Collection Definition
-    items:
-      $ref: "#/definitions/Libraries"
-
   Libraries:
     type: object
     title: Library Definition
