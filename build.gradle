@@ -33,24 +33,6 @@ ext {
     asciiDocOutputDir = file("${buildDir}/asciidoc")
 }
 
-convertSwagger2markup {
-    swaggerInput file("src/docs/swagger/admin.yaml").getAbsolutePath()
-    outputFile file("../docs-server/modules/n1ql/pages/n1ql-rest-api/admin")
-    config = ['swagger2markup.markupLanguage' : 'ASCIIDOC',
-              'swagger2markup.generatedExamplesEnabled' : false,
-              'swagger2markup.operationOrderBy' : 'AS_IS',
-              'swagger2markup.definitionOrderBy' : 'AS_IS',
-              'swagger2markup.swaggerMarkupLanguage' : 'ASCIIDOC',
-              'swagger2markup.flatBodyEnabled' : false,
-              'swagger2markup.extensions.springRestDocs.snippetBaseUri' : file('src/docs/asciidoc/extensions/paths').absolutePath,
-              'swagger2markup.extensions.springRestDocs.markupLanguage' : 'ASCIIDOC',
-              'swagger2markup.extensions.springRestDocs.defaultSnippets' : true,
-              'swagger2markup.extensions.dynamicDefinitions.contentPath' : file('src/docs/asciidoc/extensions/definitions').absolutePath,
-              'swagger2markup.extensions.dynamicOverview.contentPath' : file('src/docs/asciidoc/extensions/overview').absolutePath,
-              'swagger2markup.extensions.dynamicPaths.contentPath' : file('src/docs/asciidoc/extensions/paths').absolutePath,
-              'swagger2markup.extensions.dynamicSecurity.contentPath' : file('src/docs/asciidoc/extensions/security').absolutePath]
-}
-
 asciidoctorj {
     version = '1.5.5'
 }
