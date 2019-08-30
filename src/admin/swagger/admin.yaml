@@ -394,7 +394,8 @@ paths:
       description: Currently unused.
       security:
         - None: []
-      produces: text/html
+      produces:
+        - text/html
       responses:
         302:
           description: Redirects to the <<_get_stats>> endpoint.
