@@ -332,8 +332,6 @@ paths:
       responses:
         200:
           description: An empty object.
-          examples:
-            application:json: {}
           schema:
             type: object
 
@@ -399,8 +397,6 @@ paths:
       responses:
         302:
           description: Redirects to the <<_get_stats>> endpoint.
-          examples:
-            text/html: <a href="/admin/stats">Found</a>
           schema:
             type: text/html
 
