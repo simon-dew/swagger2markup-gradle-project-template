@@ -623,35 +623,52 @@ definitions:
         description: The version of the query engine.
       total.threads:
         type: integer
-        description: Active threads.
+        description: The number of active threads used by the query engine.
       cores:
         type: integer
-        description: Number of logical cores.
+        description: The maximum number of logical cores available to the query engine.
       gc.num:
         type: integer
-        description: Garbage collection.
+        format: int64
+        description: The target heap size of the next garbage collection cycle.
       gc.pause.time:
         type: string
         format: duration
-        description: Garbage collection.
+        description: The total time spent pausing for garbage collection since the query engine started (ns).
       gc.pause.percent:
         type: integer
-        description: Garbage collection.
+        format: int64
+        description: The percentage of time spent pausing for garbage collection since the last time the statistics were checked.
       memory.usage:
         type: integer
-        description: Memory usage.
+        format: int64
+        description: |
+          The amount of memory allocated for heap objects (bytes).
+          This increases as heap objects are allocated, and decreases as objects are freed.
       memory.total:
         type: integer
-        description: Memory usage.
+        format: int64
+        description: |
+          The cumulative amount of memory allocated for heap objects (bytes).
+          This increases as heap objects are allocated, but does not decrease when objects are freed.
       memory.system:
         type: integer
-        description: Memory usage.
+        format: int64
+        description: |
+          The total amount of memory obtained from the operating system (bytes).
+          This measures the virtual address space reserved by the query engine for heaps, stacks, and other internal data structures.
       cpu.user.percent:
         type: integer
-        description: CPU usage.
+        format: int64
+        description: |
+          CPU usage.
+          The percentage of time spent executing user code since the last time the statistics were checked.
       cpu.sys.percent:
         type: integer
-        description: CPU usage.
+        format: int64
+        description: |
+          CPU usage.
+          The percentage of time spent executing system code since the last time the statistics were checked.
       request.completed.count:
         type: integer
         description: Total number of completed requests.
