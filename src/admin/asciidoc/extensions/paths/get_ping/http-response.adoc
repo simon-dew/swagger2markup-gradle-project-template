@@ -3,6 +3,6 @@
 .Response 200
 [source,json]
 ----
-{ }
+{}
 ----
 ====
