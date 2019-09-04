@@ -10,6 +10,7 @@ buildscript {
         classpath 'io.github.swagger2markup:swagger2markup-gradle-plugin:1.3.3'
         classpath "io.github.swagger2markup:swagger2markup:1.3.3"
         classpath "io.github.swagger2markup:swagger2markup-import-files-ext:1.3.3"
+        classpath "io.github.swagger2markup:swagger2markup-spring-restdocs-ext:1.3.3"
         classpath "com.bluepapa32:gradle-watch-plugin:0.1.5"
         classpath "org.kordamp.gradle:livereload-gradle-plugin:0.2.1"
     }
@@ -34,13 +35,16 @@ ext {
 
 convertSwagger2markup {
     swaggerInput file("src/docs/swagger/admin.yaml").getAbsolutePath()
-    outputFile file("../docs-server/modules/n1ql/pages/n1ql-rest-api/admin")
+    outputDir file("../docs-server/modules/n1ql/partials/n1ql-rest-api/admin")
     config = ['swagger2markup.markupLanguage' : 'ASCIIDOC',
               'swagger2markup.generatedExamplesEnabled' : false,
               'swagger2markup.operationOrderBy' : 'AS_IS',
               'swagger2markup.definitionOrderBy' : 'AS_IS',
               'swagger2markup.swaggerMarkupLanguage' : 'ASCIIDOC',
               'swagger2markup.flatBodyEnabled' : false,
+              'swagger2markup.extensions.springRestDocs.snippetBaseUri' : file('src/docs/asciidoc/extensions/paths').absolutePath,
+              'swagger2markup.extensions.springRestDocs.markupLanguage' : 'ASCIIDOC',
+              'swagger2markup.extensions.springRestDocs.defaultSnippets' : true,
               'swagger2markup.extensions.dynamicDefinitions.contentPath' : file('src/docs/asciidoc/extensions/definitions').absolutePath,
               'swagger2markup.extensions.dynamicOverview.contentPath' : file('src/docs/asciidoc/extensions/overview').absolutePath,
               'swagger2markup.extensions.dynamicPaths.contentPath' : file('src/docs/asciidoc/extensions/paths').absolutePath,
